@@ -89,6 +89,7 @@ async function refreshGames(force=false){
 }
 $("#refresh-games").addEventListener("click",()=>refreshGames(true));
 async function initializeCatalog(){
+  $("#refresh-games").disabled=true;status("正在检查游戏目录…");
   // 先展示内嵌目录或上次成功同步的目录，直接双击 HTML 也能显示游戏。
   try{const embedded=JSON.parse($("#game-catalog").textContent);applyCatalog(embedded);metadata=new Map(games.map(g=>[g.id,g]));}catch{}
   const cached=readCache();if(cached){try{applyCatalog(cached.catalog);}catch{}}
@@ -99,6 +100,7 @@ async function initializeCatalog(){
       if(!cached){applyCatalog(published);}else{applyCatalog({...cached.catalog,games:games.map(g=>({...g,...(metadata.get(g.id)||{}),updated:g.updated}))});}
     }catch{}
   }
+  $("#refresh-games").disabled=false;
   await refreshGames();
 }
 initializeCatalog();
