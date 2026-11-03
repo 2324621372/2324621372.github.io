@@ -1,6 +1,6 @@
 {
   "owner": "2324621372",
-  "syncedAt": "2026-11-02",
+  "syncedAt": "2026-11-03",
   "games": [
     {
       "id": "baishou-play",
@@ -13,6 +13,18 @@
       "color": "#f4bb5b",
       "cover": "assets/covers/baishou-play.jpg",
       "icon": "assets/icons/baishou-play.svg"
+    },
+    {
+      "name": "压舱飞艇",
+      "category": "反应挑战",
+      "emoji": "🎈",
+      "description": "压舱飞艇：蒸汽时代。飞艇只能扔沙袋上升、放气下降，操作有迟滞、资源只减不增，穿过烟囱森林和雷暴峡谷飞得越远越好（竖屏手机 H5，打开即玩）",
+      "color": "#e8b47f",
+      "id": "ballast-play",
+      "url": "https://2324621372.github.io/ballast-play/",
+      "updated": "2026-11-02T12:46:49Z",
+      "icon": "assets/icons/ballast-play.svg",
+      "cover": "assets/covers/ballast-play.jpg"
     },
     {
       "id": "beatclimb-play",
@@ -135,9 +147,21 @@
       "icon": "assets/icons/deadroad-play.svg"
     },
     {
+      "name": "声东击西",
+      "category": "动作冒险",
+      "emoji": "⚔️",
+      "description": "声东击西：末日丧尸。不开枪，扔鞭炮/闹钟/收音机把尸群引开，护送幸存者走到避难所（竖屏手机 H5，打开即玩）",
+      "color": "#bb9bd1",
+      "id": "decoy-play",
+      "url": "https://2324621372.github.io/decoy-play/",
+      "updated": "2026-11-02T12:47:06Z",
+      "icon": "assets/icons/decoy-play.svg",
+      "cover": "assets/covers/decoy-play.jpg"
+    },
+    {
       "id": "dinodentist-play",
       "url": "https://2324621372.github.io/dinodentist-play/",
-      "updated": "2026-11-02T05:23:24Z",
+      "updated": "2026-11-02T13:09:28Z",
       "name": "恐龙牙医",
       "category": "反应挑战",
       "emoji": "🦖",
@@ -245,7 +269,7 @@
     {
       "id": "fossilturret-play",
       "url": "https://2324621372.github.io/fossilturret-play/",
-      "updated": "2026-11-02T08:12:16Z",
+      "updated": "2026-11-03T02:01:20Z",
       "name": "化石学家·骨炮守卫",
       "category": "策略对战",
       "emoji": "🦴",
@@ -279,9 +303,21 @@
       "icon": "assets/icons/mutong-play.svg"
     },
     {
+      "name": "长颈桥",
+      "category": "休闲益智",
+      "emoji": "🦖",
+      "description": "长颈桥：恐龙世界：你是河里的雷龙，上下拖动抬低脖子当桥，让小恐龙安全过河（竖屏手机 H5，打开即玩）",
+      "color": "#8bbb85",
+      "id": "neckbridge-play",
+      "url": "https://2324621372.github.io/neckbridge-play/",
+      "updated": "2026-11-03T02:30:13Z",
+      "icon": "assets/icons/neckbridge-play.svg",
+      "cover": "assets/covers/neckbridge-play.jpg"
+    },
+    {
       "id": "nightwarden-play",
       "url": "https://2324621372.github.io/nightwarden-play/",
-      "updated": "2026-11-02T02:29:41Z",
+      "updated": "2026-11-03T01:36:16Z",
       "name": "夜巡咒师",
       "category": "动作冒险",
       "emoji": "🪄",
@@ -433,6 +469,30 @@
       "color": "#91bca0",
       "cover": "assets/covers/terrace-play.jpg",
       "icon": "assets/icons/terrace-play.svg"
+    },
+    {
+      "name": "尸潮小镇·平面版",
+      "category": "动作冒险",
+      "emoji": "⚔️",
+      "description": "尸潮小镇：俯视角双摇杆打僵尸，掉落限弹武器、精英与 Boss、QTE 处决、安全屋养成（竖屏手机 H5，打开即玩）",
+      "color": "#bb9bd1",
+      "id": "zombietown2d-play",
+      "url": "https://2324621372.github.io/zombietown2d-play/",
+      "updated": "2026-11-02T08:49:04Z",
+      "icon": "assets/icons/zombietown2d-play.svg",
+      "cover": "assets/covers/zombietown2d-play.jpg"
+    },
+    {
+      "name": "尸潮小镇·立体版",
+      "category": "动作冒险",
+      "emoji": "⚔️",
+      "description": "尸潮小镇 3D：俯视角打僵尸，开局一把无限手枪，装备全靠杀丧尸爆出来；路障、爆炸桶、精英、Boss、QTE 处决、安全屋养成（竖屏手机 H5，打开即玩）",
+      "color": "#bb9bd1",
+      "id": "zombietown3d-play",
+      "url": "https://2324621372.github.io/zombietown3d-play/",
+      "updated": "2026-11-03T03:17:01Z",
+      "icon": "assets/icons/zombietown3d-play.svg",
+      "cover": "assets/covers/zombietown3d-play.jpg"
     }
   ]
 }

@@ -17,22 +17,88 @@ function reset(){view="all";category="全部游戏";$("#search").value="";render
 for(const c of categories){const b=element("button","category",c.icon+" "+c.name);b.type="button";b.dataset.category=c.name;b.addEventListener("click",()=>{category=c.name;render();});$("#categories").append(b);}
 document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;category="全部游戏";$("#search").value="";render();$("#library").scrollIntoView({behavior:"smooth"});}));
 $("#search").addEventListener("input",render);$("#sort").addEventListener("change",render);$("#clear").addEventListener("click",reset);$("#reset").addEventListener("click",reset);$("#random").addEventListener("click",()=>{if(games.length)openGame(games[Math.floor(Math.random()*games.length)]);});$("#close-dialog").addEventListener("click",()=>$("#game-dialog").close());$("#game-dialog").addEventListener("click",e=>{if(e.target===$("#game-dialog")){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});$("#dialog-favorite").addEventListener("click",()=>toggleFavorite(selected.id));$("#launch-game").addEventListener("click",()=>markPlayed(selected));document.addEventListener("keydown",e=>{if(e.key==="/"&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!$("#game-dialog").open){e.preventDefault();$("#search").focus();}});
-function applyCatalog(data){
+const OWNER="2324621372";
+const EXCLUDED_REPOS=new Set(["game-hub","game-hub-play",OWNER+".github.io"]);
+const CACHE_KEY="shiqu-live-catalog-v1";
+const CACHE_TTL=5*60*1000;
+let metadata=new Map(),refreshing=false;
+function validGames(data){
   if(!data||!Array.isArray(data.games))throw Error("游戏目录无效");
   const valid=data.games.filter(g=>g&&/^[a-zA-Z0-9_.-]+$/.test(g.id)&&/^https:\/\/2324621372\.github\.io\//.test(g.url)&&[g.name,g.description,g.category,g.updated,g.icon,g.cover].every(v=>typeof v==="string"));
-  if(!valid.length)throw Error("游戏目录为空");
-  games=valid;
+  if(valid.length!==data.games.length)throw Error("游戏目录包含无效条目");
+  return valid;
+}
+function applyCatalog(data){
+  games=validGames(data);
   $("#total-count").textContent=games.length;
   $("#hero-count").textContent=games.length;
   $("#sync-date").textContent="游戏目录更新于 "+data.syncedAt;
   $("#load-error").hidden=true;
   render();
 }
-// 首先读取随网页保存的目录，不依赖额外请求，支持直接双击本地 HTML。
-try{const embedded=$("#game-catalog");if(embedded)applyCatalog(JSON.parse(embedded.textContent));}catch(error){console.warn("内置目录读取失败",error);}
-// 在线访问时再检查最新目录；请求失败时继续显示已有游戏。
-if(location.protocol!=="file:"){
-  fetch("games.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(applyCatalog).catch(()=>{
+function status(text){$("#catalog-status").textContent=text;}
+function readCache(){try{const cached=JSON.parse(localStorage.getItem(CACHE_KEY));if(cached&&Number.isFinite(cached.savedAt)&&cached.savedAt<=Date.now()){validGames(cached.catalog);return cached;}}catch{}return null;}
+function saveCache(catalog){try{localStorage.setItem(CACHE_KEY,JSON.stringify({savedAt:Date.now(),catalog}));}catch{}}
+async function requestJSON(url){
+  const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),12000);
+  try{const response=await fetch(url,{cache:"no-cache",signal:controller.signal});if(!response.ok){const error=Error("请求失败");error.status=response.status;throw error;}return await response.json();}finally{clearTimeout(timeout);}
+}
+function guessTheme(text){
+  const rules=[[/节拍|节奏|音游|音乐/,"音乐节奏","🎵","#9e9bde"],[/农场|种田|种菜|菜园|收获|经营|电梯/,"模拟经营","🌱","#99bd7c"],[/恐龙|雷龙/,"休闲益智","🦖","#8bbb85"],[/飞艇|飞行|气球/,"反应挑战","🎈","#e8b47f"],[/丧尸|僵尸|尸潮|潜入|冒险/,"动作冒险","⚔️","#bb9bd1"],[/守卫|策略|炮台|指令|调度/,"策略对战","🛡️","#8cb5c9"],[/反应|时机|快门/,"反应挑战","⚡","#efb562"]];
+  const match=rules.find(([pattern])=>pattern.test(text));return match?{category:match[1],emoji:match[2],color:match[3]}:{category:"休闲益智",emoji:"🎮",color:"#8bc8ac"};
+}
+function chineseName(repo){
+  const description=(repo.description||"").trim();
+  const candidate=description.split(/[：:，,。；;（(]|\s+(?:H5|单文件|在线|公开)/i)[0].replace(/\s*[··-]?\s*(?:H5|单文件发布).*$/i,"").trim();
+  if(/[\u4e00-\u9fff]/.test(candidate))return candidate.slice(0,32);
+  return "新游探索·"+String([...repo.name].reduce((total,ch)=>total+ch.charCodeAt(0),0));
+}
+function themeIcon(theme){
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360"><rect width="480" height="360" rx="30" fill="'+theme.color+'"/><circle cx="410" cy="50" r="160" fill="white" opacity=".15"/><circle cx="60" cy="350" r="150" fill="white" opacity=".12"/><text x="240" y="235" text-anchor="middle" font-size="155" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">'+theme.emoji+'</text></svg>';
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+function repoToGame(repo){
+  const known=metadata.get(repo.name);
+  const theme=guessTheme(repo.description||"");const icon=themeIcon(theme);
+  return {...(known||{name:chineseName(repo),description:repo.description||"新发现的独立小游戏，打开即可游玩。",...theme,icon,cover:icon}),id:repo.name,url:"https://"+OWNER+".github.io/"+encodeURIComponent(repo.name)+"/",updated:repo.pushed_at||repo.updated_at||"1970-01-01T00:00:00Z"};
+}
+async function refreshGames(force=false){
+  if(refreshing)return;
+  const cached=readCache();
+  if(!force&&cached&&Date.now()-cached.savedAt<CACHE_TTL){status("已加载最近同步的目录");return;}
+  refreshing=true;$("#refresh-games").disabled=true;status("正在查找新游戏…");
+  try{
+    const repositories=new Map();
+    // 逐页完整读取，超过 100 个仓库时同样会继续查找游戏。
+    for(let page=1;page<=100;page++){
+      const batch=await requestJSON("https://api.github.com/users/"+OWNER+"/repos?per_page=100&type=owner&sort=full_name&direction=asc&page="+page);
+      if(!Array.isArray(batch))throw Error("仓库列表无效");
+      for(const repo of batch){if(repo&&typeof repo.name==="string"&&/^[a-zA-Z0-9_.-]+$/.test(repo.name)&&!repo.private&&repo.has_pages===true&&/play/i.test(repo.name)&&!EXCLUDED_REPOS.has(repo.name.toLowerCase())&&repo.owner?.login?.toLowerCase()===OWNER){repositories.set(repo.name,repo);}}
+      if(batch.length<100)break;
+      if(page===100)throw Error("仓库列表未读取完整");
+    }
+    const catalog={owner:OWNER,syncedAt:new Date().toLocaleDateString("sv-SE",{timeZone:"Asia/Shanghai"}),games:[...repositories.values()].map(repoToGame)};
+    const oldIds=new Set(games.map(g=>g.id));const added=catalog.games.filter(g=>!oldIds.has(g.id)).length;
+    applyCatalog(catalog);saveCache(catalog);
+    status("已同步 "+games.length+" 款"+(added?" · 新增 "+added+" 款":" · 暂无新游戏"));
+    if(force)toast(added?"发现 "+added+" 款新游戏":"游戏列表已更新");
+  }catch(error){
+    status(error.status===403||error.status===429?"同步暂受限，稍后重试":"暂时无法同步，已保留现有游戏");
     if(!games.length){$("#load-error").hidden=false;$("#results").textContent="加载失败";}
-  });
-}else if(!games.length){$("#load-error").hidden=false;$("#results").textContent="加载失败";}
+  }finally{refreshing=false;$("#refresh-games").disabled=false;}
+}
+$("#refresh-games").addEventListener("click",()=>refreshGames(true));
+async function initializeCatalog(){
+  // 先展示内嵌目录或上次成功同步的目录，直接双击 HTML 也能显示游戏。
+  try{const embedded=JSON.parse($("#game-catalog").textContent);applyCatalog(embedded);metadata=new Map(games.map(g=>[g.id,g]));}catch{}
+  const cached=readCache();if(cached){try{applyCatalog(cached.catalog);}catch{}}
+  if(location.protocol!=="file:"){
+    try{
+      const published=await requestJSON("games.json");
+      const entries=validGames(published);for(const g of entries)metadata.set(g.id,g);
+      if(!cached){applyCatalog(published);}else{applyCatalog({...cached.catalog,games:games.map(g=>({...g,...(metadata.get(g.id)||{}),updated:g.updated}))});}
+    }catch{}
+  }
+  await refreshGames();
+}
+initializeCatalog();
