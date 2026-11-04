@@ -1,6 +1,6 @@
 {
   "owner": "2324621372",
-  "syncedAt": "2026-11-03",
+  "syncedAt": "2026-11-04",
   "games": [
     {
       "id": "baishou-play",
@@ -85,6 +85,18 @@
       "color": "#7993b5",
       "cover": "assets/covers/blindrain-play.jpg",
       "icon": "assets/icons/blindrain-play.svg"
+    },
+    {
+      "name": "换躯",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "换躯：未来世界：逃亡 AI 把意识甩进敌方机器人，夺取它的身体和武器（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "bodyswap-play",
+      "url": "https://2324621372.github.io/bodyswap-play/",
+      "updated": "2026-11-04T04:55:24Z",
+      "icon": "assets/icons/bodyswap-play.svg",
+      "cover": "assets/icons/bodyswap-play.svg"
     },
     {
       "id": "burgertower-play",
@@ -267,9 +279,21 @@
       "icon": "assets/icons/fishing3d-play.svg"
     },
     {
+      "name": "折页拍拍",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "折页拍拍：蜡笔：划折线让半页书翻过来拍扁怪物，页上的画会镜像印到另一边（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "foldslam-play",
+      "url": "https://2324621372.github.io/foldslam-play/",
+      "updated": "2026-11-04T04:55:18Z",
+      "icon": "assets/icons/foldslam-play.svg",
+      "cover": "assets/icons/foldslam-play.svg"
+    },
+    {
       "id": "fossilturret-play",
       "url": "https://2324621372.github.io/fossilturret-play/",
-      "updated": "2026-11-03T05:51:53Z",
+      "updated": "2026-11-03T08:51:16Z",
       "name": "化石学家·骨炮守卫",
       "category": "策略对战",
       "emoji": "🦴",
@@ -277,6 +301,18 @@
       "color": "#c0a07a",
       "cover": "assets/covers/fossilturret-play.jpg",
       "icon": "assets/icons/fossilturret-play.svg"
+    },
+    {
+      "name": "一笔导弹",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "一笔导弹：涂鸦：在作业本上画一条线，铅笔导弹沿线飞，一笔穿过多只涂鸦怪（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "inkmissile-play",
+      "url": "https://2324621372.github.io/inkmissile-play/",
+      "updated": "2026-11-03T09:39:45Z",
+      "icon": "assets/icons/inkmissile-play.svg",
+      "cover": "assets/icons/inkmissile-play.svg"
     },
     {
       "id": "lightdelay-play",
@@ -351,6 +387,18 @@
       "icon": "assets/icons/pixelgarden-play.svg"
     },
     {
+      "name": "反冲铁罐",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "反冲铁罐：机械卡通：没有腿的罐头机器人，开炮后坐力是唯一移动方式，往下打才能往上飞，躲开上升的压板（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "recoilcan-play",
+      "url": "https://2324621372.github.io/recoilcan-play/",
+      "updated": "2026-11-03T09:22:45Z",
+      "icon": "assets/icons/recoilcan-play.svg",
+      "cover": "assets/icons/recoilcan-play.svg"
+    },
+    {
       "id": "rushlift-play",
       "url": "https://2324621372.github.io/rushlift-play/",
       "updated": "2026-11-01T05:57:28Z",
@@ -397,6 +445,18 @@
       "color": "#b4a5bd",
       "cover": "assets/covers/shoji-play.jpg",
       "icon": "assets/icons/shoji-play.svg"
+    },
+    {
+      "name": "跳帮",
+      "category": "反应挑战",
+      "emoji": "🎈",
+      "description": "跳帮：蒸汽时代：钩索摆荡在飞艇间跳帮，点燃锅炉后倒计时内荡到下一艘（竖屏手机 H5，打开即玩）",
+      "color": "#e8b47f",
+      "id": "skyboard-play",
+      "url": "https://2324621372.github.io/skyboard-play/",
+      "updated": "2026-11-03T09:37:28Z",
+      "icon": "assets/icons/skyboard-play.svg",
+      "cover": "assets/icons/skyboard-play.svg"
     },
     {
       "id": "slime-play",
@@ -459,6 +519,18 @@
       "icon": "assets/icons/taiji-play.svg"
     },
     {
+      "name": "锤尾龙",
+      "category": "休闲益智",
+      "emoji": "🦖",
+      "description": "锤尾龙：恐龙世界：拖动甲龙急转，尾锤靠惯性抡飞迅猛龙，守住蛋窝（竖屏手机 H5，打开即玩）",
+      "color": "#8bbb85",
+      "id": "tailhammer-play",
+      "url": "https://2324621372.github.io/tailhammer-play/",
+      "updated": "2026-11-04T02:24:52Z",
+      "icon": "assets/icons/tailhammer-play.svg",
+      "cover": "assets/icons/tailhammer-play.svg"
+    },
+    {
       "id": "terrace-play",
       "url": "https://2324621372.github.io/terrace-play/",
       "updated": "2026-11-02T02:14:55Z",
@@ -469,6 +541,18 @@
       "color": "#91bca0",
       "cover": "assets/covers/terrace-play.jpg",
       "icon": "assets/icons/terrace-play.svg"
+    },
+    {
+      "name": "跃迁斩",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "跃迁斩：星际：点哪瞬移到哪，跃迁路径变成空间裂痕斩开敌机（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "warpslash-play",
+      "url": "https://2324621372.github.io/warpslash-play/",
+      "updated": "2026-11-03T08:24:49Z",
+      "icon": "assets/icons/warpslash-play.svg",
+      "cover": "assets/icons/warpslash-play.svg"
     },
     {
       "name": "尸潮小镇·平面版",
