@@ -1,6 +1,6 @@
 {
   "owner": "2324621372",
-  "syncedAt": "2026-11-04",
+  "syncedAt": "2026-11-05",
   "games": [
     {
       "id": "baishou-play",
@@ -94,7 +94,7 @@
       "color": "#8bc8ac",
       "id": "bodyswap-play",
       "url": "https://2324621372.github.io/bodyswap-play/",
-      "updated": "2026-11-04T04:55:24Z",
+      "updated": "2026-11-05T03:59:53Z",
       "icon": "assets/icons/bodyswap-play.svg",
       "cover": "assets/icons/bodyswap-play.svg"
     },
@@ -109,6 +109,18 @@
       "color": "#efb562",
       "cover": "assets/covers/burgertower-play.jpg",
       "icon": "assets/icons/burgertower-play.svg"
+    },
+    {
+      "name": "购物车突围",
+      "category": "动作冒险",
+      "emoji": "⚔️",
+      "description": "购物车突围：推着购物车冲出丧尸超市，车越满撞得越狠也越难转（竖屏手机 H5，打开即玩）",
+      "color": "#bb9bd1",
+      "id": "cartbreak-play",
+      "url": "https://2324621372.github.io/cartbreak-play/",
+      "updated": "2026-11-04T17:34:00Z",
+      "icon": "assets/icons/cartbreak-play.svg",
+      "cover": "assets/icons/cartbreak-play.svg"
     },
     {
       "id": "catpounce-play",
@@ -219,6 +231,18 @@
       "icon": "assets/icons/dugui-play.svg"
     },
     {
+      "name": "回声舰队",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "回声舰队：你 4 秒前的走位会变成一架回声僚机重放火力，给未来的自己排阵（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "echofleet-play",
+      "url": "https://2324621372.github.io/echofleet-play/",
+      "updated": "2026-11-04T17:34:45Z",
+      "icon": "assets/icons/echofleet-play.svg",
+      "cover": "assets/icons/echofleet-play.svg"
+    },
+    {
       "id": "eggthief-3d-play",
       "url": "https://2324621372.github.io/eggthief-3d-play/",
       "updated": "2026-10-28T09:57:29Z",
@@ -267,6 +291,18 @@
       "icon": "assets/icons/eggthief-toon-play.svg"
     },
     {
+      "name": "擦掉它",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "擦掉它：作业本上的铅笔怪会开枪，你只有橡皮，擦哪里它就少哪里（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "eraseit-play",
+      "url": "https://2324621372.github.io/eraseit-play/",
+      "updated": "2026-11-04T17:37:30Z",
+      "icon": "assets/icons/eraseit-play.svg",
+      "cover": "assets/icons/eraseit-play.svg"
+    },
+    {
       "id": "fishing3d-play",
       "url": "https://2324621372.github.io/fishing3d-play/",
       "updated": "2026-10-27T12:50:42Z",
@@ -286,7 +322,7 @@
       "color": "#8bc8ac",
       "id": "foldslam-play",
       "url": "https://2324621372.github.io/foldslam-play/",
-      "updated": "2026-11-04T04:55:18Z",
+      "updated": "2026-11-05T05:49:01Z",
       "icon": "assets/icons/foldslam-play.svg",
       "cover": "assets/icons/foldslam-play.svg"
     },
@@ -313,6 +349,18 @@
       "updated": "2026-11-03T09:39:45Z",
       "icon": "assets/icons/inkmissile-play.svg",
       "cover": "assets/icons/inkmissile-play.svg"
+    },
+    {
+      "name": "抽砖不倒",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "抽砖不倒：叠叠高 + 托盘三消。抽砖凑同色，但每抽一块重心就偏，塔倒就输（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "jengamatch-play",
+      "url": "https://2324621372.github.io/jengamatch-play/",
+      "updated": "2026-11-05T06:43:35Z",
+      "icon": "assets/icons/jengamatch-play.svg",
+      "cover": "assets/icons/jengamatch-play.svg"
     },
     {
       "id": "lightdelay-play",
@@ -387,6 +435,18 @@
       "icon": "assets/icons/pixelgarden-play.svg"
     },
     {
+      "name": "排队三连",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "排队三连：游乐园排队入场三消。游客队伍每走一步就往前挪一格，左右换队，横排或竖排 3 个同色游客就组队入园（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "queuepark-play",
+      "url": "https://2324621372.github.io/queuepark-play/",
+      "updated": "2026-11-05T01:52:31Z",
+      "icon": "assets/icons/queuepark-play.svg",
+      "cover": "assets/icons/queuepark-play.svg"
+    },
+    {
       "name": "反冲铁罐",
       "category": "休闲益智",
       "emoji": "🎮",
@@ -435,6 +495,18 @@
       "icon": "assets/icons/saycheese-play.svg"
     },
     {
+      "name": "废铁磁暴",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "废铁磁暴：没有枪的磁铁机器人，按住吸废铁、松手甩出去砸烂锯轮兵（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "scrapstorm-play",
+      "url": "https://2324621372.github.io/scrapstorm-play/",
+      "updated": "2026-11-04T17:30:01Z",
+      "icon": "assets/icons/scrapstorm-play.svg",
+      "cover": "assets/icons/scrapstorm-play.svg"
+    },
+    {
       "id": "shoji-play",
       "url": "https://2324621372.github.io/shoji-play/",
       "updated": "2026-11-02T04:36:50Z",
@@ -469,6 +541,18 @@
       "color": "#8bc8ac",
       "cover": "assets/covers/slime-play.jpg",
       "icon": "assets/icons/slime-play.svg"
+    },
+    {
+      "name": "声呐猎杀",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "声呐猎杀：漆黑深海里点一下声呐看 2 秒，长按发鱼雷，但每次声呐都会被怪鱼听见（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "sonarhunt-play",
+      "url": "https://2324621372.github.io/sonarhunt-play/",
+      "updated": "2026-11-04T17:30:23Z",
+      "icon": "assets/icons/sonarhunt-play.svg",
+      "cover": "assets/icons/sonarhunt-play.svg"
     },
     {
       "id": "starspeak-play",
@@ -550,7 +634,7 @@
       "color": "#8bc8ac",
       "id": "warpslash-play",
       "url": "https://2324621372.github.io/warpslash-play/",
-      "updated": "2026-11-03T08:24:49Z",
+      "updated": "2026-11-04T08:04:35Z",
       "icon": "assets/icons/warpslash-play.svg",
       "cover": "assets/icons/warpslash-play.svg"
     },
