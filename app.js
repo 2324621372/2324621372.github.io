@@ -11,7 +11,7 @@ function toggleFavorite(id){if(favorites.has(id)){favorites.delete(id);toast("�
 function updateDialogFavorite(){const saved=favorites.has(selected.id);$("#dialog-favorite").textContent=saved?"♥ 已收藏":"♡ 收藏游戏";$("#dialog-favorite").setAttribute("aria-pressed",String(saved));}
 function openGame(g){selected=g;$("#dialog-title").textContent=g.name;$("#dialog-icon").src=g.icon;$("#dialog-category").textContent=g.category+" · 网页小游戏";$("#dialog-description").textContent=g.description;$("#launch-game").href=g.url;$("#source-link").href="https://github.com/2324621372/"+encodeURIComponent(g.id);updateDialogFavorite();$("#game-dialog").showModal();}
 function markPlayed(g){recent=[g.id,...recent.filter(id=>id!==g.id)].slice(0,30);storage.set("recent",recent);render();}
-function createCard(g){const card=element("article","game-card");card.style.setProperty("--color",g.color);const open=element("button","card-open");open.type="button";open.setAttribute("aria-label","查看"+g.name+"，开始游戏");open.addEventListener("click",()=>openGame(g));const cover=element("div","cover");const image=element("img","cover-img");image.src=g.cover;image.alt=g.name+"游戏画面";image.loading="lazy";image.width=480;image.height=640;const fallback=element("img","cover-fallback");fallback.src=g.icon;fallback.alt=g.name+"主题图标";image.addEventListener("error",()=>{image.hidden=true;fallback.style.display="block";});cover.append(image,fallback);cover.append(element("span","card-badge",g.category),element("span","card-play","▶"));const body=element("div","card-content");const row=element("div","card-title-row");const icon=element("img","card-icon");icon.src=g.icon;icon.alt="";icon.loading="lazy";row.append(icon,element("h3","",g.name));const footer=element("div","card-footer");footer.append(element("span","",g.category),element("span","","打开即玩 ↗"));body.append(row,element("p","card-description",g.description),footer);open.append(cover,body);const saved=favorites.has(g.id);const fav=element("button","favorite-button"+(saved?" saved":""),saved?"♥":"♡");fav.type="button";fav.setAttribute("aria-label",(saved?"取消收藏":"收藏")+g.name);fav.setAttribute("aria-pressed",String(saved));fav.addEventListener("click",()=>toggleFavorite(g.id));card.append(open,fav);return card;}
+function createCard(g){const card=element("article","game-card");card.dataset.gameId=g.id;card.style.setProperty("--color",g.color);const open=element("button","card-open");open.type="button";open.setAttribute("aria-label","查看"+g.name+"，开始游戏");open.addEventListener("click",()=>openGame(g));const cover=element("div","cover");const image=element("img","cover-img");image.src=g.cover;image.alt=g.name+"游戏画面";image.loading="lazy";image.width=480;image.height=640;const fallback=element("img","cover-fallback");fallback.src=g.icon;fallback.alt=g.name+"主题图标";image.addEventListener("error",()=>{image.hidden=true;fallback.style.display="block";});image.addEventListener("load",()=>{image.hidden=false;fallback.style.display="none";});cover.append(image,fallback);cover.append(element("span","card-badge",g.category),element("span","card-play","▶"));const body=element("div","card-content");const row=element("div","card-title-row");const icon=element("img","card-icon");icon.src=g.icon;icon.alt="";icon.loading="lazy";row.append(icon,element("h3","",g.name));const footer=element("div","card-footer");footer.append(element("span","",g.category),element("span","","打开即玩 ↗"));body.append(row,element("p","card-description",g.description),footer);open.append(cover,body);const saved=favorites.has(g.id);const fav=element("button","favorite-button"+(saved?" saved":""),saved?"♥":"♡");fav.type="button";fav.setAttribute("aria-label",(saved?"取消收藏":"收藏")+g.name);fav.setAttribute("aria-pressed",String(saved));fav.addEventListener("click",()=>toggleFavorite(g.id));card.append(open,fav);return card;}
 function render(){const query=$("#search").value.trim().toLocaleLowerCase();let shown=games.filter(g=>(view!=="favorites"||favorites.has(g.id))&&(view!=="recent"||recent.includes(g.id))&&(category==="全部游戏"||g.category===category)&&(!query||[g.name,g.description,g.category,g.id].some(v=>v.toLocaleLowerCase().includes(query))));const sort=$("#sort").value;shown.sort((a,b)=>{if(sort==="newest")return b.updated.localeCompare(a.updated);if(sort==="name")return a.name.localeCompare(b.name,"zh-Hans-CN");if(view==="recent")return recent.indexOf(a.id)-recent.indexOf(b.id);const ai=recommended.indexOf(a.id),bi=recommended.indexOf(b.id);return (ai<0?999:ai)-(bi<0?999:bi)||b.updated.localeCompare(a.updated);});$("#game-grid").replaceChildren(...shown.map(createCard));$("#results").textContent=(view==="favorites"?"我的收藏":view==="recent"?"最近玩过":"全部灵感，随心挑选")+" · 共 "+shown.length+" 款游戏";$("#favorite-count").textContent=games.filter(g=>favorites.has(g.id)).length;$("#empty").hidden=shown.length>0;$("#empty h3").textContent=view==="favorites"&&!query&&category==="全部游戏"?"把喜欢的游戏留在这里":view==="recent"&&!query&&category==="全部游戏"?"你的冒险，从第一局开始":"还没有找到小游戏";$("#empty p").textContent=view==="favorites"?"点击游戏卡片上的爱心，即可加入收藏。":view==="recent"?"点击开始游戏后，足迹就会出现在这里。":"试试其他关键词，或换个分类逛逛。";$("#clear").hidden=!query&&category==="全部游戏"&&view==="all";document.querySelectorAll(".category").forEach(b=>{b.classList.toggle("active",b.dataset.category===category);b.setAttribute("aria-pressed",String(b.dataset.category===category));});document.querySelectorAll(".nav-item").forEach(b=>{b.classList.toggle("active",b.dataset.view===view);b.setAttribute("aria-pressed",String(b.dataset.view===view));});}
 function reset(){view="all";category="全部游戏";$("#search").value="";render();}
 for(const c of categories){const b=element("button","category",c.icon+" "+c.name);b.type="button";b.dataset.category=c.name;b.addEventListener("click",()=>{category=c.name;render();});$("#categories").append(b);}
@@ -35,6 +35,7 @@ function applyCatalog(data){
   $("#sync-date").textContent="游戏目录更新于 "+data.syncedAt;
   $("#load-error").hidden=true;
   render();
+  queueGameArtwork();
 }
 function status(text){$("#catalog-status").textContent=text;}
 function readCache(){try{const cached=JSON.parse(localStorage.getItem(CACHE_KEY));if(cached&&Number.isFinite(cached.savedAt)&&cached.savedAt<=Date.now()){validGames(cached.catalog);return cached;}}catch{}return null;}
@@ -58,15 +59,65 @@ function themeIcon(theme){
   return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
 }
 function repoToGame(repo){
-  const known=metadata.get(repo.name);
+  const known=metadata.get(repo.name)||games.find(g=>g.id===repo.name);
   const theme=guessTheme(repo.description||"");const icon=themeIcon(theme);
   return {...(known||{name:chineseName(repo),description:repo.description||"新发现的独立小游戏，打开即可游玩。",...theme,icon,cover:icon}),id:repo.name,url:"https://"+OWNER+".github.io/"+encodeURIComponent(repo.name)+"/",updated:repo.pushed_at||repo.updated_at||"1970-01-01T00:00:00Z"};
+}
+const artworkQueue=[],artworkAttempts=new Map();
+let artworkWorkers=0;
+function needsArtwork(g){return g.cover===g.icon||g.cover.startsWith("data:");}
+function artworkURL(value,base){
+  if(!value)return null;
+  try{const u=new URL(value,base);if(u.protocol==="https:"||/^data:image\/(?:png|jpeg|webp|gif|svg\+xml)[;,]/i.test(u.href))return u.href;}catch{}
+  return null;
+}
+async function loadArtwork(url){
+  return new Promise(resolve=>{const image=new Image();const finish=value=>{clearTimeout(timer);image.onload=image.onerror=null;resolve(value);};const timer=setTimeout(()=>finish(false),4500);image.onload=()=>finish(image.naturalWidth>=32&&image.naturalHeight>=32);image.onerror=()=>finish(false);image.src=url;});
+}
+async function discoverArtwork(game){
+  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),8000);
+  try{
+    const response=await fetch(game.url,{signal:controller.signal,cache:"no-cache"});if(!response.ok)return;
+    const doc=new DOMParser().parseFromString(await response.text(),"text/html");
+    const base=game.url;const covers=[],icons=[];
+    for(const el of doc.querySelectorAll('meta[property="og:image"],meta[name="twitter:image"],meta[property="twitter:image"]'))covers.push(artworkURL(el.getAttribute("content"),base));
+    for(const el of doc.querySelectorAll('link[rel="image_src"]'))covers.push(artworkURL(el.getAttribute("href"),base));
+    for(const el of doc.querySelectorAll('img[data-game-cover],img.game-cover,img#game-cover'))covers.push(artworkURL(el.getAttribute("src"),base));
+    for(const el of doc.querySelectorAll('link[rel~="apple-touch-icon"],link[rel~="icon"]'))icons.push(artworkURL(el.getAttribute("href"),base));
+    // Some repositories publish a cover without adding a social-image meta tag.
+    covers.push(new URL("cover.webp",base).href,new URL("cover.png",base).href,new URL("cover.jpg",base).href);
+    let cover=null,icon=null;
+    for(const url of [...new Set(covers.filter(Boolean))]){if(await loadArtwork(url)){cover=url;break;}}
+    for(const url of [...new Set(icons.filter(Boolean))]){if(await loadArtwork(url)){icon=url;break;}}
+    if(!cover&&!icon)return;
+    const current=games.find(g=>g.id===game.id);if(!current||!needsArtwork(current))return;
+    if(cover)current.cover=cover;else current.cover=icon;
+    if(icon)current.icon=icon;
+    // Update images without replacing cards, moving focus, or closing a game dialog.
+    for(const card of document.querySelectorAll(".game-card")){
+      if(card.dataset.gameId!==game.id)continue;
+      card.querySelector(".cover-img").src=current.cover;
+      card.querySelector(".card-icon").src=current.icon;
+      card.querySelector(".cover-fallback").src=current.icon;
+    }
+    if(selected?.id===game.id){selected=current;$("#dialog-icon").src=current.icon;}
+    // Keep the repository cache timestamp: artwork must not postpone game discovery.
+    const cached=readCache();if(cached){cached.catalog.games=cached.catalog.games.map(g=>g.id===current.id?current:g);try{localStorage.setItem(CACHE_KEY,JSON.stringify(cached));}catch{}}
+  }catch{}finally{clearTimeout(timer);}
+}
+function queueGameArtwork(force=false){
+  for(const g of games){if(!needsArtwork(g))continue;const key=g.id+":"+g.updated;const last=artworkAttempts.get(key)||0;if(!force&&Date.now()-last<CACHE_TTL)continue;artworkAttempts.set(key,Date.now());if(!artworkQueue.some(item=>item.id===g.id))artworkQueue.push({...g});}
+  while(artworkWorkers<3&&artworkQueue.length){artworkWorkers++;(async()=>{try{while(artworkQueue.length)await discoverArtwork(artworkQueue.shift());}finally{artworkWorkers--;}})();}
 }
 async function refreshGames(force=false){
   if(refreshing)return;
   const cached=readCache();
   if(!force&&cached&&Date.now()-cached.savedAt<CACHE_TTL){status("已加载最近同步的目录");return;}
   refreshing=true;$("#refresh-games").disabled=true;status("正在查找新游戏…");
+  // 手动刷新同时读取自动任务新生成的截图，即使仓库列表请求受限也能更新图片。
+  if(force&&location.protocol!=="file:"){
+    try{const published=await requestJSON("games.json");const entries=validGames(published);for(const g of entries)metadata.set(g.id,g);applyCatalog({syncedAt:published.syncedAt,games:games.map(g=>({...g,...(metadata.get(g.id)||{}),updated:g.updated}))});}catch{}
+  }
   try{
     const repositories=new Map();
     // 逐页完整读取，超过 100 个仓库时同样会继续查找游戏。

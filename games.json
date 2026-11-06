@@ -1,6 +1,6 @@
 {
   "owner": "2324621372",
-  "syncedAt": "2026-11-05",
+  "syncedAt": "2026-11-06",
   "games": [
     {
       "id": "baishou-play",
@@ -51,6 +51,18 @@
       "icon": "assets/icons/beatracer-play.svg"
     },
     {
+      "name": "蜂刺齐发",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "蜂刺齐发：射出去的蜂会死：蜂群既是弹药也是血量，采花招兵（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "beesting-play",
+      "url": "https://2324621372.github.io/beesting-play/",
+      "updated": "2026-11-05T17:05:26Z",
+      "icon": "assets/icons/beesting-play.svg",
+      "cover": "assets/covers/beesting-play.jpg"
+    },
+    {
       "id": "bigfish-play",
       "url": "https://2324621372.github.io/bigfish-play/",
       "updated": "2026-10-29T07:56:47Z",
@@ -96,7 +108,19 @@
       "url": "https://2324621372.github.io/bodyswap-play/",
       "updated": "2026-11-05T03:59:53Z",
       "icon": "assets/icons/bodyswap-play.svg",
-      "cover": "assets/icons/bodyswap-play.svg"
+      "cover": "assets/covers/bodyswap-play.jpg"
+    },
+    {
+      "name": "浪摆齐射",
+      "category": "音乐节奏",
+      "emoji": "🎵",
+      "description": "浪摆齐射：松手瞬间的船身倾角决定炮弹射程，踩着海浪节奏舷侧齐射（竖屏手机 H5，打开即玩）",
+      "color": "#9e9bde",
+      "id": "broadside-play",
+      "url": "https://2324621372.github.io/broadside-play/",
+      "updated": "2026-11-05T17:07:35Z",
+      "icon": "assets/icons/broadside-play.svg",
+      "cover": "assets/covers/broadside-play.jpg"
     },
     {
       "id": "burgertower-play",
@@ -120,7 +144,7 @@
       "url": "https://2324621372.github.io/cartbreak-play/",
       "updated": "2026-11-04T17:34:00Z",
       "icon": "assets/icons/cartbreak-play.svg",
-      "cover": "assets/icons/cartbreak-play.svg"
+      "cover": "assets/covers/cartbreak-play.jpg"
     },
     {
       "id": "catpounce-play",
@@ -133,6 +157,18 @@
       "color": "#eeae88",
       "cover": "assets/covers/catpounce-play.jpg",
       "icon": "assets/icons/catpounce-play.svg"
+    },
+    {
+      "name": "猎豹扑杀",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "猎豹扑杀：冲刺升体温、过热瘫倒，在兽群里锁定猎物扑杀（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "cheetahpounce-play",
+      "url": "https://2324621372.github.io/cheetahpounce-play/",
+      "updated": "2026-11-05T17:10:18Z",
+      "icon": "assets/icons/cheetahpounce-play.svg",
+      "cover": "assets/covers/cheetahpounce-play.jpg"
     },
     {
       "id": "countsheep-play",
@@ -231,6 +267,18 @@
       "icon": "assets/icons/dugui-play.svg"
     },
     {
+      "name": "雄鹰俯冲",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "雄鹰俯冲：收翼俯冲越快拉起越难，掠过猎物抓取，撞掉偷猎无人机（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "eagledive-play",
+      "url": "https://2324621372.github.io/eagledive-play/",
+      "updated": "2026-11-05T17:18:43Z",
+      "icon": "assets/icons/eagledive-play.svg",
+      "cover": "assets/covers/eagledive-play.jpg"
+    },
+    {
       "name": "回声舰队",
       "category": "休闲益智",
       "emoji": "🎮",
@@ -240,7 +288,7 @@
       "url": "https://2324621372.github.io/echofleet-play/",
       "updated": "2026-11-04T17:34:45Z",
       "icon": "assets/icons/echofleet-play.svg",
-      "cover": "assets/icons/echofleet-play.svg"
+      "cover": "assets/covers/echofleet-play.jpg"
     },
     {
       "id": "eggthief-3d-play",
@@ -300,7 +348,7 @@
       "url": "https://2324621372.github.io/eraseit-play/",
       "updated": "2026-11-04T17:37:30Z",
       "icon": "assets/icons/eraseit-play.svg",
-      "cover": "assets/icons/eraseit-play.svg"
+      "cover": "assets/covers/eraseit-play.jpg"
     },
     {
       "id": "fishing3d-play",
@@ -315,6 +363,18 @@
       "icon": "assets/icons/fishing3d-play.svg"
     },
     {
+      "name": "旗手冲锋",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "旗手冲锋：你只扛旗，全军跟着旗走自动开火，士气决定射速，插旗占壕（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "flagcharge-play",
+      "url": "https://2324621372.github.io/flagcharge-play/",
+      "updated": "2026-11-05T17:09:23Z",
+      "icon": "assets/icons/flagcharge-play.svg",
+      "cover": "assets/covers/flagcharge-play.jpg"
+    },
+    {
       "name": "折页拍拍",
       "category": "休闲益智",
       "emoji": "🎮",
@@ -322,9 +382,9 @@
       "color": "#8bc8ac",
       "id": "foldslam-play",
       "url": "https://2324621372.github.io/foldslam-play/",
-      "updated": "2026-11-05T05:49:01Z",
+      "updated": "2026-11-05T09:05:02Z",
       "icon": "assets/icons/foldslam-play.svg",
-      "cover": "assets/icons/foldslam-play.svg"
+      "cover": "assets/covers/foldslam-play.jpg"
     },
     {
       "id": "fossilturret-play",
@@ -339,6 +399,18 @@
       "icon": "assets/icons/fossilturret-play.svg"
     },
     {
+      "name": "热球蜂团",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "热球蜂团：几百只蜜蜂裹住胡蜂，把温度卡在 46–48℃ 热死它（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "heatball-play",
+      "url": "https://2324621372.github.io/heatball-play/",
+      "updated": "2026-11-05T17:07:05Z",
+      "icon": "assets/icons/heatball-play.svg",
+      "cover": "assets/covers/heatball-play.jpg"
+    },
+    {
       "name": "一笔导弹",
       "category": "休闲益智",
       "emoji": "🎮",
@@ -348,7 +420,7 @@
       "url": "https://2324621372.github.io/inkmissile-play/",
       "updated": "2026-11-03T09:39:45Z",
       "icon": "assets/icons/inkmissile-play.svg",
-      "cover": "assets/icons/inkmissile-play.svg"
+      "cover": "assets/covers/inkmissile-play.jpg"
     },
     {
       "name": "抽砖不倒",
@@ -360,7 +432,7 @@
       "url": "https://2324621372.github.io/jengamatch-play/",
       "updated": "2026-11-05T06:43:35Z",
       "icon": "assets/icons/jengamatch-play.svg",
-      "cover": "assets/icons/jengamatch-play.svg"
+      "cover": "assets/covers/jengamatch-play.jpg"
     },
     {
       "id": "lightdelay-play",
@@ -373,6 +445,42 @@
       "color": "#9ca8d0",
       "cover": "assets/covers/lightdelay-play.jpg",
       "icon": "assets/icons/lightdelay-play.svg"
+    },
+    {
+      "name": "滚木搭桥",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "滚木搭桥：峡谷里推原木，一推滚到底，滚进一样长的河沟就卡成桥，果冻人踩着桥过河到旗子（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "logbridge-play",
+      "url": "https://2324621372.github.io/logbridge-play/",
+      "updated": "2026-11-05T09:26:32Z",
+      "icon": "assets/icons/logbridge-play.svg",
+      "cover": "assets/covers/logbridge-play.jpg"
+    },
+    {
+      "name": "猛犸骑手",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "猛犸骑手：骑猛犸横冲，象牙挑飞敌人再空中投矛连击，身后雪崩追赶（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "mammothrider-play",
+      "url": "https://2324621372.github.io/mammothrider-play/",
+      "updated": "2026-11-05T16:59:10Z",
+      "icon": "assets/icons/mammothrider-play.svg",
+      "cover": "assets/covers/mammothrider-play.jpg"
+    },
+    {
+      "name": "螳螂伏击",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "螳螂伏击：一动就掉伪装，鸟影下必须静止，闪电出镰捕虫（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "mantisambush-play",
+      "url": "https://2324621372.github.io/mantisambush-play/",
+      "updated": "2026-11-05T17:02:20Z",
+      "icon": "assets/icons/mantisambush-play.svg",
+      "cover": "assets/covers/mantisambush-play.jpg"
     },
     {
       "id": "mutong-play",
@@ -444,7 +552,7 @@
       "url": "https://2324621372.github.io/queuepark-play/",
       "updated": "2026-11-05T01:52:31Z",
       "icon": "assets/icons/queuepark-play.svg",
-      "cover": "assets/icons/queuepark-play.svg"
+      "cover": "assets/covers/queuepark-play.jpg"
     },
     {
       "name": "反冲铁罐",
@@ -454,9 +562,9 @@
       "color": "#8bc8ac",
       "id": "recoilcan-play",
       "url": "https://2324621372.github.io/recoilcan-play/",
-      "updated": "2026-11-03T09:22:45Z",
+      "updated": "2026-11-06T00:34:55Z",
       "icon": "assets/icons/recoilcan-play.svg",
-      "cover": "assets/icons/recoilcan-play.svg"
+      "cover": "assets/covers/recoilcan-play.jpg"
     },
     {
       "id": "rushlift-play",
@@ -502,9 +610,21 @@
       "color": "#8bc8ac",
       "id": "scrapstorm-play",
       "url": "https://2324621372.github.io/scrapstorm-play/",
-      "updated": "2026-11-04T17:30:01Z",
+      "updated": "2026-11-05T09:09:34Z",
       "icon": "assets/icons/scrapstorm-play.svg",
-      "cover": "assets/icons/scrapstorm-play.svg"
+      "cover": "assets/covers/scrapstorm-play.jpg"
+    },
+    {
+      "name": "镰轮战车",
+      "category": "音乐节奏",
+      "emoji": "🎵",
+      "description": "镰轮战车：只有侧面镰刃能杀敌的罗马战车，漂移擦杀角斗士，节拍挥鞭（竖屏手机 H5，打开即玩）",
+      "color": "#9e9bde",
+      "id": "scythechariot-play",
+      "url": "https://2324621372.github.io/scythechariot-play/",
+      "updated": "2026-11-05T17:08:14Z",
+      "icon": "assets/icons/scythechariot-play.svg",
+      "cover": "assets/covers/scythechariot-play.jpg"
     },
     {
       "id": "shoji-play",
@@ -528,7 +648,7 @@
       "url": "https://2324621372.github.io/skyboard-play/",
       "updated": "2026-11-03T09:37:28Z",
       "icon": "assets/icons/skyboard-play.svg",
-      "cover": "assets/icons/skyboard-play.svg"
+      "cover": "assets/covers/skyboard-play.jpg"
     },
     {
       "id": "slime-play",
@@ -552,7 +672,7 @@
       "url": "https://2324621372.github.io/sonarhunt-play/",
       "updated": "2026-11-04T17:30:23Z",
       "icon": "assets/icons/sonarhunt-play.svg",
-      "cover": "assets/icons/sonarhunt-play.svg"
+      "cover": "assets/covers/sonarhunt-play.jpg"
     },
     {
       "id": "starspeak-play",
@@ -591,6 +711,18 @@
       "icon": "assets/icons/sundry-play.svg"
     },
     {
+      "name": "烈日神盾",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "烈日神盾：金盾反射阳光烧敌，太阳移动、日落变弱，夜里靠火盆（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "sunshield-play",
+      "url": "https://2324621372.github.io/sunshield-play/",
+      "updated": "2026-11-05T17:06:34Z",
+      "icon": "assets/icons/sunshield-play.svg",
+      "cover": "assets/covers/sunshield-play.jpg"
+    },
+    {
       "id": "taiji-play",
       "url": "https://2324621372.github.io/taiji-play/",
       "updated": "2026-11-02T04:54:41Z",
@@ -610,9 +742,9 @@
       "color": "#8bbb85",
       "id": "tailhammer-play",
       "url": "https://2324621372.github.io/tailhammer-play/",
-      "updated": "2026-11-04T02:24:52Z",
+      "updated": "2026-11-05T12:22:05Z",
       "icon": "assets/icons/tailhammer-play.svg",
-      "cover": "assets/icons/tailhammer-play.svg"
+      "cover": "assets/covers/tailhammer-play.jpg"
     },
     {
       "id": "terrace-play",
@@ -627,6 +759,30 @@
       "icon": "assets/icons/terrace-play.svg"
     },
     {
+      "name": "龟甲推进",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "龟甲推进：3×3 罗马龟甲阵转盾挡箭雨，破洞决定下一波漏点，一路顶到城门（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "testudo-play",
+      "url": "https://2324621372.github.io/testudo-play/",
+      "updated": "2026-11-05T17:12:12Z",
+      "icon": "assets/icons/testudo-play.svg",
+      "cover": "assets/covers/testudo-play.jpg"
+    },
+    {
+      "name": "潮起潮落",
+      "category": "休闲益智",
+      "emoji": "🎮",
+      "description": "潮起潮落：点月亮切换涨退潮，退潮走沙洲、涨潮划木筏；没坐满的木筏也能当地面踩，3 个同色上船就开走（竖屏手机 H5，打开即玩）",
+      "color": "#8bc8ac",
+      "id": "tideraft-play",
+      "url": "https://2324621372.github.io/tideraft-play/",
+      "updated": "2026-11-05T09:26:01Z",
+      "icon": "assets/icons/tideraft-play.svg",
+      "cover": "assets/covers/tideraft-play.jpg"
+    },
+    {
       "name": "跃迁斩",
       "category": "休闲益智",
       "emoji": "🎮",
@@ -636,7 +792,7 @@
       "url": "https://2324621372.github.io/warpslash-play/",
       "updated": "2026-11-04T08:04:35Z",
       "icon": "assets/icons/warpslash-play.svg",
-      "cover": "assets/icons/warpslash-play.svg"
+      "cover": "assets/covers/warpslash-play.jpg"
     },
     {
       "name": "尸潮小镇·平面版",
